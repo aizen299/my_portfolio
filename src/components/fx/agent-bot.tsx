@@ -11,6 +11,7 @@ const AgentBotScene = dynamic(
 
 export function AgentBot() {
   const reduced = useMediaQuery(REDUCED_MOTION_QUERY);
+  const isTouch = useMediaQuery("(pointer: coarse)");
   const [visible, setVisible] = useState(true);
   const [hintOpacity, setHintOpacity] = useState(1);
 
@@ -31,7 +32,7 @@ export function AgentBot() {
     return () => clearTimeout(t);
   }, []);
 
-  if (reduced) return null;
+  if (reduced || isTouch) return null;
 
   return (
     <>
