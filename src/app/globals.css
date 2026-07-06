@@ -170,12 +170,6 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Custom cursor active (fine pointers, motion allowed) */
-html.custom-cursor,
-html.custom-cursor * {
-  cursor: none !important;
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;

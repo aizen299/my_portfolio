@@ -209,7 +209,7 @@ export function AgentBotScene() {
       camera={{ position: [0, 0, 8], fov: 60 }}
       dpr={[1, 1.5]}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", pointerEvents: "none" }}
     >
       <Robot />
     </Canvas>

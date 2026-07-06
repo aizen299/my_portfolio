@@ -4,7 +4,6 @@ import { cookies } from "next/headers";
 import "./globals.css";
 import { SITE, SITE_URL, SOCIALS } from "@/lib/content";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
-import { Cursor } from "@/components/fx/cursor";
 import { EasterEggs } from "@/components/fx/easter-eggs";
 import { ChatWidget } from "@/components/fx/chat-widget";
 
@@ -107,7 +106,6 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <SmoothScroll>{children}</SmoothScroll>
-        <Cursor />
         <EasterEggs />
         <ChatWidget />
       </body>
