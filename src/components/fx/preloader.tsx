@@ -24,10 +24,11 @@ const BOTTOM_CLIP = `polygon(100% 100%, 0% 100%, ${[...CRACK.split(", ")]
 const SESSION_KEY = "divi:loaded";
 
 export function Preloader() {
-  // Skip instantly on same-session back-navigations; only run on hard load.
-  const [done, setDone] = useState(
-    () => typeof window !== "undefined" && !!sessionStorage.getItem(SESSION_KEY)
-  );
+  // Must start false to match the server-rendered overlay — reading
+  // sessionStorage in the initializer made the client render null on
+  // same-session reloads and caused an intermittent hydration mismatch.
+  // The effect below skips out immediately when the key is already set.
+  const [done, setDone] = useState(false);
   const overlay = useRef<HTMLDivElement>(null);
   const topHalf = useRef<HTMLDivElement>(null);
   const bottomHalf = useRef<HTMLDivElement>(null);
@@ -42,9 +43,11 @@ export function Preloader() {
       window.dispatchEvent(new Event("divi:preloaded"));
     };
 
-    // Already ran this session — just unblock the hero and exit.
+    // Already ran this session — unblock the hero and drop the overlay
+    // right away (back-navigations, warm reloads).
     if (sessionStorage.getItem(SESSION_KEY)) {
       announce();
+      setDone(true);
       return;
     }
 

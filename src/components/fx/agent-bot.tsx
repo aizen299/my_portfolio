@@ -12,8 +12,15 @@ const AgentBotScene = dynamic(
 export function AgentBot() {
   const reduced = useMediaQuery(REDUCED_MOTION_QUERY);
   const isTouch = useMediaQuery("(pointer: coarse)");
+  // The scroll-driven floor mapping needs room — skip narrow viewports too.
+  const desktop = useMediaQuery("(min-width: 1024px)");
   const [visible, setVisible] = useState(true);
   const [hintOpacity, setHintOpacity] = useState(1);
+  // Render nothing until after mount so SSR and the first client render
+  // always match — the ssr:false scene chunk can render synchronously on
+  // warm reloads and cause an intermittent hydration mismatch otherwise.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   // G key toggles the robot on/off
   useEffect(() => {
@@ -32,7 +39,7 @@ export function AgentBot() {
     return () => clearTimeout(t);
   }, []);
 
-  if (reduced || isTouch) return null;
+  if (!mounted || reduced || isTouch || !desktop) return null;
 
   return (
     <>

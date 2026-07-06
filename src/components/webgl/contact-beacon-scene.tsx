@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -126,10 +126,12 @@ function Beacon({ count, isLight }: { count: number; isLight: boolean }) {
   const isLightRef = useRef(isLight);
   const colorMixCur = useRef(isLight ? 1 : 0);
   const alphaCur = useRef(isLight ? 0.6 : 0.5);
-  const stableBlending = useRef<THREE.Blending>(
+  // Initial blending fixed at mount; theme flips happen imperatively in
+  // useFrame at the colour midpoint (refs must not be read during render).
+  const [initialBlending] = useState<THREE.Blending>(() =>
     isLight ? THREE.NormalBlending : THREE.AdditiveBlending
   );
-  const blendingCur = useRef(stableBlending.current);
+  const blendingCur = useRef(initialBlending);
 
   useEffect(() => {
     isLightRef.current = isLight;
@@ -175,7 +177,7 @@ function Beacon({ count, isLight }: { count: number; isLight: boolean }) {
           uniforms={uniforms}
           transparent
           depthWrite={false}
-          blending={stableBlending.current}
+          blending={initialBlending}
         />
       </points>
     </group>
