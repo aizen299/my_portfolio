@@ -94,7 +94,7 @@ export function ChatWidget() {
     <div className="fixed bottom-6 right-6 z-[150] flex flex-col items-end gap-3">
       {/* Chat panel */}
       {open && (
-        <div className="chat-widget-panel flex h-[480px] w-80 flex-col overflow-hidden rounded-xl border border-silver/20 shadow-2xl sm:w-96">
+        <div className="chat-widget-panel flex h-[min(480px,70dvh)] w-[min(24rem,calc(100vw-3rem))] flex-col overflow-hidden rounded-xl border border-silver/20 shadow-2xl">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-silver/10 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -105,10 +105,10 @@ export function ChatWidget() {
             </div>
             <button
               onClick={() => setOpen(false)}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="-mr-1.5 flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
               aria-label="Close chat"
             >
-              <X size={15} />
+              <X size={16} />
             </button>
           </div>
 
@@ -177,12 +177,12 @@ export function ChatWidget() {
                 onClick={() => void send()}
                 disabled={!input.trim() || streaming}
                 aria-label="Send"
-                className="shrink-0 text-signal transition-opacity disabled:opacity-30"
+                className="-m-1.5 flex size-8 shrink-0 items-center justify-center text-signal transition-opacity disabled:opacity-30"
               >
                 {streaming ? (
-                  <Loader2 size={15} className="animate-spin" />
+                  <Loader2 size={16} className="animate-spin" />
                 ) : (
-                  <Send size={15} />
+                  <Send size={16} />
                 )}
               </button>
             </div>

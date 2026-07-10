@@ -54,7 +54,7 @@ export function SoundToggle() {
       aria-pressed={on}
       aria-label={on ? "Mute interface sounds" : "Enable interface sounds"}
       title={on ? "sound: on" : "sound: off"}
-      className="text-muted-foreground transition-colors hover:text-signal"
+      className="flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-signal"
     >
       <svg
         viewBox="0 0 24 24"

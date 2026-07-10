@@ -29,7 +29,7 @@ export function ThemeToggle() {
       aria-pressed={isLight}
       aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
       title={isLight ? "light mode" : "dark mode"}
-      className="text-muted-foreground transition-colors hover:text-signal"
+      className="flex size-8 items-center justify-center text-muted-foreground transition-colors hover:text-signal"
     >
       <svg
         viewBox="0 0 24 24"
