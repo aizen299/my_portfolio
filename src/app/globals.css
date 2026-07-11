@@ -334,6 +334,56 @@ html.lenis body {
     animation: beam-spin 5s linear infinite;
     pointer-events: none;
   }
+
+  /* Blog post body — plain semantic HTML styled with the site's tokens.
+     No @tailwindcss/typography dependency; scoped to .blog-prose. */
+  .blog-prose {
+    @apply max-w-2xl text-base leading-relaxed text-foreground/80;
+  }
+  .blog-prose > :first-child {
+    margin-top: 0;
+  }
+  .blog-prose h2 {
+    @apply text-display text-3xl sm:text-4xl mt-14 mb-4 text-foreground;
+  }
+  .blog-prose h3 {
+    @apply font-heading text-xl font-medium mt-10 mb-3 text-foreground;
+  }
+  .blog-prose p {
+    @apply my-4;
+  }
+  .blog-prose ul {
+    @apply my-4 list-disc space-y-2 pl-5;
+  }
+  .blog-prose ol {
+    @apply my-4 list-decimal space-y-2 pl-5;
+  }
+  .blog-prose li::marker {
+    color: color-mix(in oklab, var(--ice) 60%, transparent);
+  }
+  .blog-prose a {
+    @apply text-ice underline decoration-ice/40 underline-offset-4 transition-colors;
+  }
+  .blog-prose a:hover {
+    @apply text-signal;
+  }
+  .blog-prose strong {
+    @apply font-semibold text-foreground;
+  }
+  .blog-prose code {
+    @apply font-mono text-[0.85em] text-ice;
+    background: color-mix(in oklab, var(--ice) 10%, transparent);
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+  }
+  .blog-prose pre code {
+    @apply text-foreground/90;
+    background: none;
+    padding: 0;
+  }
+  .blog-prose hr {
+    @apply my-10 border-border;
+  }
 }
 
 @property --beam-angle {
