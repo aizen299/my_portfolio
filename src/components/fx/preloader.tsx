@@ -47,6 +47,7 @@ export function Preloader() {
     // right away (back-navigations, warm reloads).
     if (sessionStorage.getItem(SESSION_KEY)) {
       announce();
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncs with an external system (sessionStorage): drop the intro overlay immediately on warm reloads / back-navigation.
       setDone(true);
       return;
     }

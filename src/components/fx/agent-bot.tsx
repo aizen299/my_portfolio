@@ -20,6 +20,7 @@ export function AgentBot() {
   // always match — the ssr:false scene chunk can render synchronously on
   // warm reloads and cause an intermittent hydration mismatch otherwise.
   const [mounted, setMounted] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- deliberate client-only mount gate (see comment above): flips state after hydration to keep SSR and first client render identical.
   useEffect(() => setMounted(true), []);
 
   // G key toggles the robot on/off
