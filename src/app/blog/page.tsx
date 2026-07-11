@@ -28,62 +28,65 @@ export default function BlogIndexPage() {
       <ScrollProgress />
       <Nav />
       <main className="flex-1 px-6 pt-32 lg:px-10">
-        <header className="pb-16">
-          <p className="label-mono mb-6">{"//"} logs — writing</p>
-          <h1 className="text-display text-6xl sm:text-7xl lg:text-8xl">Logs</h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Engineering write-ups — multi-agent AI, WebGL performance, and
-            offensive security. Each one traces back to something I actually
-            built.
-          </p>
-        </header>
+        <div className="grid gap-12 pb-32 lg:grid-cols-[20rem_minmax(0,1fr)] lg:gap-20">
+          {/* Left rail — title + intro, sticky on desktop */}
+          <header className="lg:sticky lg:top-32 lg:self-start">
+            <p className="label-mono mb-6">{"//"} logs — writing</p>
+            <h1 className="text-display text-6xl sm:text-7xl">Logs</h1>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Engineering write-ups — multi-agent AI, WebGL performance, and
+              offensive security. Each one traces back to something I actually
+              built.
+            </p>
+          </header>
 
-        <ul className="max-w-3xl border-t pb-32">
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group block border-b py-10"
-              >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                  <time
-                    dateTime={post.date}
-                    className="label-mono text-muted-foreground"
-                  >
-                    {formatPostDate(post.date)}
-                  </time>
-                  <span aria-hidden className="label-mono text-muted-foreground">
-                    ·
-                  </span>
-                  <span className="label-mono text-muted-foreground">
-                    {post.readingTime}
-                  </span>
-                </div>
+          {/* Right column — the post list fills the remaining width */}
+          <ul className="border-t">
+            {posts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col gap-3 border-b py-10 sm:flex-row sm:justify-between sm:gap-10"
+                >
+                  <div className="min-w-0">
+                    <h2 className="text-display text-3xl transition-colors group-hover:text-signal sm:text-4xl">
+                      {post.title}
+                    </h2>
 
-                <h2 className="text-display mt-3 text-3xl transition-colors group-hover:text-signal sm:text-4xl">
-                  {post.title}
-                </h2>
+                    <p className="mt-3 max-w-2xl text-muted-foreground">
+                      {post.excerpt}
+                    </p>
 
-                <p className="mt-3 max-w-2xl text-muted-foreground">
-                  {post.excerpt}
-                </p>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <li key={tag}>
+                          <Badge
+                            variant="outline"
+                            className="font-mono text-xs uppercase tracking-wider text-foreground/80 border-silver/40"
+                          >
+                            {tag}
+                          </Badge>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <li key={tag}>
-                      <Badge
-                        variant="outline"
-                        className="font-mono text-xs uppercase tracking-wider text-foreground/80 border-silver/40"
-                      >
-                        {tag}
-                      </Badge>
-                    </li>
-                  ))}
-                </ul>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end sm:gap-1">
+                    <time
+                      dateTime={post.date}
+                      className="label-mono text-muted-foreground"
+                    >
+                      {formatPostDate(post.date)}
+                    </time>
+                    <span className="label-mono text-muted-foreground">
+                      {post.readingTime}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </main>
       <Footer />
     </>
