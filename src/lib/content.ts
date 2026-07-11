@@ -24,7 +24,8 @@ export const SECTIONS = [
   { id: "systems", index: "04", label: "systems", title: "Skills" },
   { id: "core", index: "05", label: "core", title: "Projects" },
   { id: "vault", index: "06", label: "vault", title: "Security" },
-  { id: "signal", index: "07", label: "signal", title: "Contact" },
+  { id: "logs", index: "07", label: "logs", title: "Logs" },
+  { id: "signal", index: "08", label: "signal", title: "Contact" },
 ] as const;
 
 export type SectionId = (typeof SECTIONS)[number]["id"];

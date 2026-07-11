@@ -344,7 +344,9 @@ html.lenis body {
     margin-top: 0;
   }
   .blog-prose h2 {
-    @apply text-display text-3xl sm:text-4xl mt-14 mb-4 text-foreground;
+    /* text-display isn't an @apply-able utility (it's a custom class), so
+       inline its underlying utilities here. */
+    @apply font-heading font-medium tracking-[-0.04em] leading-[0.95] text-3xl sm:text-4xl mt-14 mb-4 text-foreground;
   }
   .blog-prose h3 {
     @apply font-heading text-xl font-medium mt-10 mb-3 text-foreground;

@@ -26,7 +26,7 @@ export function Contact() {
       />
       <ContactBeacon />
 
-      <SectionHeading index="07" label="signal" title="Signal" />
+      <SectionHeading index="08" label="signal" title="Signal" />
 
       <div className="mt-16 grid gap-16 lg:grid-cols-2">
         <div className="flex flex-col gap-8">
