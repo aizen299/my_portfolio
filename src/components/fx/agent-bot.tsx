@@ -14,8 +14,9 @@ export function AgentBot() {
   const isTouch = useMediaQuery("(pointer: coarse)");
   // The scroll-driven floor mapping needs room — skip narrow viewports too.
   const desktop = useMediaQuery("(min-width: 1024px)");
-  const [visible, setVisible] = useState(true);
-  const [hintOpacity, setHintOpacity] = useState(1);
+  // Robot is OFF by default — visitors opt in with the [G] key.
+  const [visible, setVisible] = useState(false);
+  const [hintFaded, setHintFaded] = useState(false);
   // Render nothing until after mount so SSR and the first client render
   // always match — the ssr:false scene chunk can render synchronously on
   // warm reloads and cause an intermittent hydration mismatch otherwise.
@@ -34,13 +35,17 @@ export function AgentBot() {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // Hint fades out after 6 s
+  // Fade the hint only after the robot is on (they've discovered [G]); while
+  // it's off, keep the "wake" note up so the affordance stays discoverable.
   useEffect(() => {
-    const t = setTimeout(() => setHintOpacity(0), 6000);
+    if (!visible) return;
+    const t = setTimeout(() => setHintFaded(true), 6000);
     return () => clearTimeout(t);
-  }, []);
+  }, [visible]);
 
   if (!mounted || reduced || isTouch || !desktop) return null;
+
+  const hintOpacity = visible && hintFaded ? 0 : 1;
 
   return (
     <>
@@ -58,7 +63,8 @@ export function AgentBot() {
         </div>
       )}
 
-      {/* Keyboard hint — fades after 6 s, always pointer-events-none */}
+      {/* Corner hint — invites the visitor to wake the robot while it's off,
+          then fades once it's running. Always pointer-events-none. */}
       <div
         aria-hidden
         style={{
@@ -70,9 +76,11 @@ export function AgentBot() {
           opacity: hintOpacity,
           transition: "opacity 1.5s ease",
         }}
-        className="font-mono text-[9px] tracking-[0.2em] text-muted-foreground/50"
+        className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground/60"
       >
-        [G] TOGGLE AGENT · DRIVEN BY SCROLL
+        {visible
+          ? "[G] ▸ DISMISS · DRIVEN BY SCROLL"
+          : "PRESS [G] TO WAKE THE ROBOT ▸"}
       </div>
     </>
   );
