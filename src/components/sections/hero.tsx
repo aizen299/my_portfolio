@@ -57,6 +57,21 @@ export function Hero() {
     };
   }, [ready, reduced]);
 
+  // Absolute fail-safe: the name must NEVER stay stuck hidden below its mask.
+  // If, a few seconds after mount, the reveal hasn't happened (a missed
+  // preloader signal, a killed tween, anything), force it visible with an
+  // instant set. Runs once; the timer outlives the ~2s preloader + reveal.
+  useEffect(() => {
+    if (reduced) return;
+    const el = titleRef.current;
+    if (!el) return;
+    const t = window.setTimeout(() => {
+      gsap.set(el.querySelectorAll("[data-char]"), { yPercent: 0 });
+      if (metaRef.current) gsap.set(metaRef.current, { opacity: 1 });
+    }, 4500);
+    return () => window.clearTimeout(t);
+  }, [reduced]);
+
   return (
     <section
       id="surface"

@@ -70,7 +70,7 @@ export function AgentBot() {
         style={{
           position: "fixed",
           bottom: 10,
-          right: 14,
+          left: 16,
           zIndex: 40,
           pointerEvents: "none",
           opacity: hintOpacity,
