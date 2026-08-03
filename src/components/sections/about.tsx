@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionHeading } from "@/components/layout/section-heading";
 import { ProfileDepth } from "@/components/webgl/profile-depth";
 import { ScrollTicker } from "@/components/fx/scroll-ticker";
-import { STATS, STACK_MARQUEE } from "@/lib/content";
+import { STATS, STACK_MARQUEE, DISTINCTIONS } from "@/lib/content";
 import { GSAP_EASE, STAGGER } from "@/lib/motion";
 import { useMediaQuery, REDUCED_MOTION_QUERY } from "@/lib/hooks";
 
@@ -137,6 +137,26 @@ export function About() {
               </div>
             ))}
           </dl>
+
+          {/* Beyond the code — personal distinctions */}
+          <div>
+            <h3 className="label-mono mb-4">beyond the code</h3>
+            <ul className="flex flex-wrap gap-3">
+              {DISTINCTIONS.map((d) => (
+                <li
+                  key={d.label}
+                  className="flex flex-col gap-1 rounded-lg border bg-background px-5 py-3"
+                >
+                  <span className="text-display text-lg text-ice">
+                    {d.label}
+                  </span>
+                  <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                    {d.detail}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -261,6 +261,15 @@ export const EXPERIENCE: Experience[] = [
     ],
   },
   {
+    role: "Operations & Management Head",
+    org: "VIT Blockchain Community Club",
+    period: "2024 – Present",
+    points: [
+      "Lead general operations and management for the college blockchain community — coordinating events, teams, and technical initiatives across the chapter.",
+      "Mentor 150+ students in software engineering, security, and decentralized systems, building a campus pipeline of blockchain and security talent.",
+    ],
+  },
+  {
     role: "Blockchain Developer",
     org: "IBM",
     period: "May 2025 – Jun 2025",
@@ -314,6 +323,12 @@ export const SKILL_CARDS = [
     items: ["Ethereum", "Solidity", "Contract auditing", "Secure coding"],
     featured: false,
   },
+] as const;
+
+/** Beyond-the-code distinctions — surfaced as badges in the Profile section. */
+export const DISTINCTIONS = [
+  { label: "NPTEL Gold Medal", detail: "100 / 100 — Wildlife & Ecology" },
+  { label: "State-Level Champion", detail: "Table Tennis" },
 ] as const;
 
 export const VAULT_PHILOSOPHY =
