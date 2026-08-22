@@ -164,7 +164,7 @@ export async function POST(req: Request): Promise<Response> {
   const history = messages.slice(-20);
 
   const stream = await getGroq().chat.completions.create({
-    model: "llama-3.3-70b-versatile",
+    model: "openai/gpt-oss-120b",
     max_tokens: 512,
     messages: [{ role: "system", content: buildSystem() }, ...history],
     stream: true,
