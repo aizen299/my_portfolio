@@ -19,7 +19,7 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000")
+    : "https://my-portfolio-tau-inky-70.vercel.app")
 ).replace(/\/$/, "");
 
 export const SECTIONS = [

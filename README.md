@@ -2,6 +2,8 @@
 
 Personal portfolio of Aditya Raina — software engineer working across DevSecOps, distributed systems, and cross-chain blockchain protocols. Built as a single long-scroll experience with GPU-adaptive WebGL particle systems, GSAP scroll choreography, and a terminal-style AI chat widget.
 
+**Live → [my-portfolio-tau-inky-70.vercel.app](https://my-portfolio-tau-inky-70.vercel.app)**
+
 ---
 
 ## Features
