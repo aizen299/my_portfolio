@@ -21,7 +21,7 @@ export function Contact() {
         className="absolute left-1/2 top-24 -z-20 size-[36rem] -translate-x-1/2 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(34,211,238,0.10), rgba(125,211,252,0.05) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(255,122,69,0.10), rgba(245,177,76,0.05) 40%, transparent 70%)",
         }}
       />
       <ContactBeacon />

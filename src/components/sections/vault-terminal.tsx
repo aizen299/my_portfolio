@@ -92,7 +92,7 @@ function run(raw: string): Line[] | "clear" {
       ];
     case "exit":
     case "quit":
-      return [{ kind: "sys", text: "there is no exit from the void. only descent." }];
+      return [{ kind: "sys", text: "there is no exit. only more shipping." }];
     case "matrix":
       return [{ kind: "sys", text: "wake up, Neo… (try the konami code ↑↑↓↓←→←→ b a)" }];
     case "coffee":
@@ -102,7 +102,7 @@ function run(raw: string): Line[] | "clear" {
     case "rm -rf /":
     case "rm -rf /*":
       return [
-        { kind: "sys", text: "permission denied — the void cannot be deleted." },
+        { kind: "sys", text: "permission denied — this portfolio cannot be deleted." },
         { kind: "sys", text: "(nice instinct, though.)" },
       ];
     case "clear":
@@ -186,7 +186,7 @@ export function VaultTerminal() {
         <span aria-hidden className="size-2.5 rounded-full bg-silver/20" />
         <span aria-hidden className="size-2.5 rounded-full bg-silver/20" />
         <p className="ml-2 font-mono text-xs text-muted-foreground">
-          {SITE.alias.toLowerCase().replace("://", "@")}:~/vault
+          {"aditya"}:~/vault
         </p>
       </div>
 

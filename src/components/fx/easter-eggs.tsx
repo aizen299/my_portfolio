@@ -25,18 +25,18 @@ export function EasterEggs() {
   useEffect(() => {
     // console signature
     console.log(
-      "%cAIZEN://VOID",
-      "color:#22D3EE;font-size:22px;font-weight:bold;font-family:monospace;letter-spacing:3px;"
+      "%cAditya Raina",
+      "color:#ff7a45;font-size:22px;font-weight:bold;font-family:monospace;letter-spacing:3px;"
     );
     console.log(
-      "%cInspecting the void? I like you already.\nType %csudo hire me%c in the vault terminal.",
-      "color:#7DD3FC;font-family:monospace;",
-      "color:#22D3EE;font-family:monospace;font-weight:bold;",
-      "color:#7DD3FC;font-family:monospace;"
+      "%cInspecting the source? I like you already.\nType %csudo hire me%c in the vault terminal.",
+      "color:#f5b14c;font-family:monospace;",
+      "color:#ff7a45;font-family:monospace;font-weight:bold;",
+      "color:#f5b14c;font-family:monospace;"
     );
     console.log(
       `%c→ ${SITE.email}`,
-      "color:#8593A0;font-family:monospace;"
+      "color:#9A8C7C;font-family:monospace;"
     );
 
     // konami code
@@ -49,7 +49,7 @@ export function EasterEggs() {
         document.documentElement.classList.add("konami");
         console.log(
           "%c[ACCESS GRANTED] you found the back door.",
-          "color:#22D3EE;font-family:monospace;font-weight:bold;"
+          "color:#ff7a45;font-family:monospace;font-weight:bold;"
         );
         window.setTimeout(
           () => document.documentElement.classList.remove("konami"),

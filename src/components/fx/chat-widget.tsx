@@ -100,7 +100,7 @@ export function ChatWidget() {
             <div className="flex items-center gap-2">
               <span className="size-2 animate-pulse rounded-full bg-signal" />
               <span className="label-mono text-xs text-ice">
-                AIZEN://VOID · live
+                Aditya Raina · live
               </span>
             </div>
             <button

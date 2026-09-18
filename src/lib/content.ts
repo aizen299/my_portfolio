@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: "Aditya Raina",
-  alias: "AIZEN://VOID",
+  alias: "Aditya Raina",
   email: "rainaaditya58@gmail.com",
   roles: ["software engineer", "devsecops builder", "blockchain engineer"],
   status: "open to work",

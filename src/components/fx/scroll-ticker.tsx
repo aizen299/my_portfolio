@@ -12,7 +12,7 @@ const LINES = [
   "MODE: SHIP",
   "SIG: ENCRYPTED",
   "BUILD: 2028",
-  "VOID: ACTIVE",
+  "STATUS: ONLINE",
 ];
 
 /**

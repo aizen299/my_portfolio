@@ -6,8 +6,8 @@ import * as THREE from "three";
 
 const GRAVITY = 20;
 const JUMP_FORCE = 6.5;
-const ICE = "#7dd3fc";
-const CYAN = "#22d3ee";
+const ICE = "#f5b14c";
+const CYAN = "#ff7a45";
 
 // Camera: [0, 0, 8], fov 60 → halfH = tan(30°) * 8 ≈ 4.62 world units
 const HALF_H = Math.tan((30 * Math.PI) / 180) * 8;

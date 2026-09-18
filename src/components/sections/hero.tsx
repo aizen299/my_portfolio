@@ -79,7 +79,7 @@ export function Hero() {
       className="relative flex min-h-screen flex-col justify-end px-6 pb-16 pt-32 lg:px-10"
     >
       <p className="label-mono mb-6">
-        {"//"} 01 — surface · {SITE.alias}
+        {"//"} 01 — surface
       </p>
 
       <h1

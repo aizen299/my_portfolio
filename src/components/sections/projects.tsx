@@ -56,7 +56,7 @@ function Panel({
   return (
     <article
       ref={articleRef}
-      className={`dark-zone group relative flex shrink-0 flex-col justify-end overflow-hidden rounded-lg border p-6 sm:p-8 lg:p-12 ${
+      className={`dark-zone group relative isolate bg-void flex shrink-0 flex-col justify-end overflow-hidden rounded-lg border p-6 sm:p-8 lg:p-12 ${
         reduced
           ? "w-full pb-8 pt-64"
           : "h-[78vh] w-[82vw] sm:w-[62vw] lg:w-[48vw]"

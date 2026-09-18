@@ -94,7 +94,7 @@ export function ContactForm() {
         <p className="label-mono text-signal">{"//"} transmission received</p>
         <p className="text-display text-3xl sm:text-4xl">Signal locked in.</p>
         <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-          Thanks — your message reached the void and bounced straight to my
+          Thanks — your message landed straight in my
           inbox. I&apos;ll reply soon.
         </p>
         <button

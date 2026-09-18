@@ -37,7 +37,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation menu"
-        className={`fixed inset-y-0 right-0 z-[95] flex w-72 flex-col gap-0 bg-[#050507]/95 backdrop-blur-xl border-l border-border transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] lg:hidden ${
+        className={`fixed inset-y-0 right-0 z-[95] flex w-72 flex-col gap-0 bg-[#0b0908]/95 backdrop-blur-xl border-l border-border transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >

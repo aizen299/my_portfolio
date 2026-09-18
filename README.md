@@ -1,4 +1,4 @@
-# AIZEN://VOID
+# Aditya Raina
 
 Personal portfolio of Aditya Raina — software engineer working across DevSecOps, distributed systems, and cross-chain blockchain protocols. Built as a single long-scroll experience with GPU-adaptive WebGL particle systems, GSAP scroll choreography, and a terminal-style AI chat widget.
 
@@ -79,7 +79,7 @@ UPSTASH_REDIS_REST_TOKEN=
 # Contact form emails (Resend)
 RESEND_API_KEY=
 CONTACT_TO_EMAIL=rainaaditya58@gmail.com
-CONTACT_FROM_EMAIL="AIZEN://VOID <onboarding@resend.dev>"
+CONTACT_FROM_EMAIL="Aditya Raina <onboarding@resend.dev>"
 
 # Canonical URL for metadata / OG tags (optional — on Vercel it defaults
 # to the project's *.vercel.app production domain)

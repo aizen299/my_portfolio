@@ -51,10 +51,10 @@ const FRAGMENT = /* glsl */ `
   }
 `;
 
-const ICE = new THREE.Color("#7DD3FC");
-const SIGNAL = new THREE.Color("#22D3EE");
-const ICE_LIGHT = new THREE.Color("#1565C0");
-const SIGNAL_LIGHT = new THREE.Color("#0C7A9A");
+const ICE = new THREE.Color("#f5b14c");
+const SIGNAL = new THREE.Color("#ff7a45");
+const ICE_LIGHT = new THREE.Color("#a4500a");
+const SIGNAL_LIGHT = new THREE.Color("#b93c0b");
 
 /** Deterministic PRNG — keeps the beacon pure across re-renders. */
 function mulberry32(seed: number) {

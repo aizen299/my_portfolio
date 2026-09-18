@@ -94,7 +94,7 @@ export function About() {
             {/* soft glow behind the subject so it doesn't float flatly */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-6 bottom-6 top-10 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(125,211,252,0.18),transparent_70%)] blur-2xl"
+              className="pointer-events-none absolute inset-x-6 bottom-6 top-10 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,177,76,0.18),transparent_70%)] blur-2xl"
             />
             <ProfileDepth />
           </div>

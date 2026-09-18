@@ -18,8 +18,8 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: "72px",
           background:
-            "radial-gradient(circle at 70% 20%, #0e2a38 0%, #050507 55%)",
-          color: "#C8D3DC",
+            "radial-gradient(circle at 70% 20%, #2a1a0c 0%, #0b0908 55%)",
+          color: "#e8e1d9",
           fontFamily: "sans-serif",
         }}
       >
@@ -27,7 +27,7 @@ export default function OpengraphImage() {
           style={{
             fontSize: 26,
             letterSpacing: 8,
-            color: "#7DD3FC",
+            color: "#f5b14c",
             fontFamily: "monospace",
           }}
         >
@@ -41,7 +41,7 @@ export default function OpengraphImage() {
               fontWeight: 700,
               lineHeight: 1,
               letterSpacing: -3,
-              color: "#EAF2F8",
+              color: "#F7F1E8",
             }}
           >
             {SITE.name}
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
           <div
             style={{
               fontSize: 34,
-              color: "#7DD3FC",
+              color: "#f5b14c",
               fontFamily: "monospace",
             }}
           >
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             gap: 16,
             fontSize: 24,
             letterSpacing: 4,
-            color: "#8593A0",
+            color: "#9A8C7C",
             fontFamily: "monospace",
           }}
         >
@@ -73,7 +73,7 @@ export default function OpengraphImage() {
               width: 12,
               height: 12,
               borderRadius: 999,
-              background: "#22D3EE",
+              background: "#ff7a45",
             }}
           />
           STATUS: OPEN TO WORK

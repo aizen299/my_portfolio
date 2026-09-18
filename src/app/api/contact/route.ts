@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
   const { name, email, message } = parsed.data;
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL ?? "rainaaditya58@gmail.com";
-  const from = process.env.CONTACT_FROM_EMAIL ?? "AIZEN://VOID <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM_EMAIL ?? "Aditya Raina <onboarding@resend.dev>";
 
   // No key configured (e.g. local dev) — don't fail the UX, just log.
   if (!apiKey) {

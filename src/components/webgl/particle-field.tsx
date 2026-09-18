@@ -105,8 +105,8 @@ export function ParticleField() {
         className="absolute inset-0"
         style={{
           background: isLight
-            ? "radial-gradient(ellipse 80% 60% at 50% 38%, rgba(3,105,161,0.07), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 42%, rgba(14,116,144,0.05), transparent 60%)"
-            : "radial-gradient(ellipse 80% 60% at 50% 38%, rgba(125,211,252,0.08), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 42%, rgba(200,211,220,0.05), transparent 60%)",
+            ? "radial-gradient(ellipse 80% 60% at 50% 38%, rgba(164,80,10,0.07), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 42%, rgba(185,60,11,0.05), transparent 60%)"
+            : "radial-gradient(ellipse 80% 60% at 50% 38%, rgba(245,177,76,0.08), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 42%, rgba(232,225,217,0.05), transparent 60%)",
         }}
       />
       {!reducedMotion && count !== null && count > 0 && (

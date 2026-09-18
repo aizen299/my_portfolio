@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t px-6 py-8 lg:px-10">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <p className="font-mono text-xs text-muted-foreground">
-          © {new Date().getFullYear()} {SITE.name} — built in the void
+          © {new Date().getFullYear()} {SITE.name}
         </p>
 
         <ul className="flex items-center gap-6">

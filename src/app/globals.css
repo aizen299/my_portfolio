@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ------------------------------------------------------------------ */
-/* AIZEN://VOID design tokens                                           */
-/* Palette is strict: void black, arctic silver, ice blue, signal cyan */
+/* Aditya Raina design tokens                                           */
+/* Palette is strict: warm black, bone, amber, ember orange */
 /* (signal = interactive states ONLY). Nothing else.                   */
 /* ------------------------------------------------------------------ */
 
@@ -63,17 +63,17 @@
 
 /* Dark theme (default) */
 :root {
-  --void: #050507;
-  --silver: #c8d3dc;
-  --ice: #7dd3fc;
-  --signal: #22d3ee;
+  --void: #0b0908;
+  --silver: #e8e1d9;
+  --ice: #f5b14c;
+  --signal: #ff7a45;
 
   --background: var(--void);
   --foreground: var(--silver);
 
-  --card: #0a0a0e;
+  --card: #12100d;
   --card-foreground: var(--silver);
-  --popover: #0a0a0e;
+  --popover: #12100d;
   --popover-foreground: var(--silver);
 
   --primary: var(--ice);
@@ -99,7 +99,7 @@
 
   --radius: 0.25rem;
 
-  --sidebar: #0a0a0e;
+  --sidebar: #12100d;
   --sidebar-foreground: var(--silver);
   --sidebar-primary: var(--ice);
   --sidebar-primary-foreground: var(--void);
@@ -109,49 +109,49 @@
   --sidebar-ring: var(--signal);
 }
 
-/* Light theme — "Bleached Void"
+/* Light theme — "Parchment"
    The page surface goes arctic-light while terminals, vault, project panels,
-   and the chat widget remain intentionally dark. --void stays #050507.
+   and the chat widget remain intentionally dark. --void stays #0b0908.
    All accent values tuned to WCAG AA (≥4.5:1) on the light background. */
 html.light {
   color-scheme: light;
 
-  /* Brand tokens (contrast on #f4f7fb):
-     silver #4a6685 → 5.6:1  ice #1565c0 → 5.5:1  signal #0c7a9a → 4.6:1 */
-  --silver: #4a6685;
-  --ice:    #1565c0;
-  --signal: #0c7a9a;
+  /* Brand tokens (contrast on #faf7f2):
+     silver #6b5a4a, ice #a4500a, signal #b93c0b — all ≥4.5:1 */
+  --silver: #6b5a4a;
+  --ice:    #a4500a;
+  --signal: #b93c0b;
 
   /* Semantic surface */
-  --background: #f4f7fb;
-  --foreground:  #0d1f33;
+  --background: #faf7f2;
+  --foreground:  #2a1d12;
 
-  --card:               #ebeef4;
-  --card-foreground:    #0d1f33;
-  --popover:            #ebeef4;
-  --popover-foreground: #0d1f33;
+  --card:               #f1ece4;
+  --card-foreground:    #2a1d12;
+  --popover:            #f1ece4;
+  --popover-foreground: #2a1d12;
 
   --primary:              var(--ice);
   --primary-foreground:   #ffffff;
-  --secondary:            color-mix(in oklab, #0d1f33 7%, transparent);
-  --secondary-foreground: #0d1f33;
-  --muted:                color-mix(in oklab, #0d1f33 6%, transparent);
-  --muted-foreground:     color-mix(in oklab, #0d1f33 48%, transparent);
-  --accent:               color-mix(in oklab, #0d1f33 8%, transparent);
-  --accent-foreground:    #0d1f33;
+  --secondary:            color-mix(in oklab, #2a1d12 7%, transparent);
+  --secondary-foreground: #2a1d12;
+  --muted:                color-mix(in oklab, #2a1d12 6%, transparent);
+  --muted-foreground:     color-mix(in oklab, #2a1d12 48%, transparent);
+  --accent:               color-mix(in oklab, #2a1d12 8%, transparent);
+  --accent-foreground:    #2a1d12;
   --destructive: oklch(0.55 0.191 22.216);
 
-  --border: color-mix(in oklab, #0d1f33 11%, transparent);
-  --input:  color-mix(in oklab, #0d1f33 15%, transparent);
+  --border: color-mix(in oklab, #2a1d12 11%, transparent);
+  --input:  color-mix(in oklab, #2a1d12 15%, transparent);
   --ring:   var(--signal);
 
-  --sidebar:                   #ebeef4;
-  --sidebar-foreground:        #0d1f33;
+  --sidebar:                   #f1ece4;
+  --sidebar-foreground:        #2a1d12;
   --sidebar-primary:           var(--ice);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:            color-mix(in oklab, #0d1f33 8%, transparent);
-  --sidebar-accent-foreground: #0d1f33;
-  --sidebar-border:            color-mix(in oklab, #0d1f33 11%, transparent);
+  --sidebar-accent:            color-mix(in oklab, #2a1d12 8%, transparent);
+  --sidebar-accent-foreground: #2a1d12;
+  --sidebar-border:            color-mix(in oklab, #2a1d12 11%, transparent);
   --sidebar-ring:              var(--signal);
 }
 
@@ -236,12 +236,14 @@ html.lenis body {
      dark in both themes. Overrides all brand tokens to dark-mode values so
      text-foreground / text-ice / text-silver resolve correctly on a dark bg. */
   html.light .dark-zone {
-    --foreground:       #c8d3dc;
-    --silver:           #c8d3dc;
-    --ice:              #7dd3fc;
-    --signal:           #22d3ee;
-    --muted-foreground: color-mix(in oklab, #c8d3dc 55%, transparent);
-    --border:           color-mix(in oklab, #c8d3dc 10%, transparent);
+    --foreground:       #e8e1d9;
+    --silver:           #e8e1d9;
+    --ice:              #f5b14c;
+    --signal:           #ff7a45;
+    --muted-foreground: color-mix(in oklab, #e8e1d9 55%, transparent);
+    --border:           color-mix(in oklab, #e8e1d9 10%, transparent);
+    background-color: var(--void);
+    color: var(--foreground);
     color-scheme: dark;
   }
 
@@ -249,17 +251,17 @@ html.lenis body {
      Overrides brand tokens inside so text-foreground/ice/signal/silver
      resolve to dark-mode values even when html.light is active. */
   .chat-widget-panel {
-    background: rgba(5, 5, 7, 0.92);
+    background: rgba(11, 9, 8, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
   html.light .chat-widget-panel {
-    --foreground:       #c8d3dc;
-    --silver:           #c8d3dc;
-    --ice:              #7dd3fc;
-    --signal:           #22d3ee;
-    --muted-foreground: color-mix(in oklab, #c8d3dc 55%, transparent);
-    --border:           color-mix(in oklab, #c8d3dc 10%, transparent);
+    --foreground:       #e8e1d9;
+    --silver:           #e8e1d9;
+    --ice:              #f5b14c;
+    --signal:           #ff7a45;
+    --muted-foreground: color-mix(in oklab, #e8e1d9 55%, transparent);
+    --border:           color-mix(in oklab, #e8e1d9 10%, transparent);
   }
 
   /* Static film grain (CSS fallback; shader version comes in Phase 2) */

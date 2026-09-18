@@ -79,11 +79,11 @@ void main() {
 }
 `;
 
-const SILVER = new THREE.Color("#C8D3DC");
-const ICE = new THREE.Color("#7DD3FC");
+const SILVER = new THREE.Color("#e8e1d9");
+const ICE = new THREE.Color("#f5b14c");
 // Light mode: dark navy/blue particles on arctic bg with NormalBlending
-const SILVER_LIGHT = new THREE.Color("#1A304E");
-const ICE_LIGHT = new THREE.Color("#1565C0");
+const SILVER_LIGHT = new THREE.Color("#4A3320");
+const ICE_LIGHT = new THREE.Color("#a4500a");
 
 /** Octahedron face corners for surface sampling. */
 const OCTA_FACES: [THREE.Vector3, THREE.Vector3, THREE.Vector3][] = (() => {
