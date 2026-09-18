@@ -8,7 +8,7 @@ const CIPHER = "!<>-_\\/[]{}—=+*^?#01";
 /**
  * Cycles a list of strings with a decrypt/scramble transition between
  * each — characters churn through cipher glyphs before resolving. Nod to
- * CipherMind. Reduced-motion users get a plain cross-fade of the words.
+ * an encrypted-chat UI. Reduced-motion users get a plain cross-fade of the words.
  */
 export function ScrambleText({
   words,

@@ -20,8 +20,8 @@ export function Logs() {
         <div className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeading index="07" label="logs" title="Logs" />
           <p className="mt-6 text-muted-foreground">
-            Field notes from the build — multi-agent AI, WebGL performance, and
-            offensive security. Every post traces back to something I actually
+            Field notes from the build — self-healing infra, DevSecOps, and
+            fuzzing. Every post traces back to something I actually
             shipped.
           </p>
           <Link

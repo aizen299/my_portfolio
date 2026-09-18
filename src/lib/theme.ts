@@ -6,13 +6,13 @@
 
 export type Theme = "dark" | "light";
 
-const KEY = "divi-theme";
+const KEY = "aizen-theme";
 
 // Initialise synchronously from cookie so the first React render already
 // has the correct theme — prevents a bright-on-light particles flash.
 function readCookieTheme(): Theme {
   if (typeof document === "undefined") return "dark";
-  const m = document.cookie.match(/divi-theme=(light|dark)/);
+  const m = document.cookie.match(/aizen-theme=(light|dark)/);
   return m?.[1] === "light" ? "light" : "dark";
 }
 

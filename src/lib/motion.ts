@@ -1,5 +1,5 @@
 /**
- * DIVI://VOID — single source of truth for motion.
+ * AIZEN://VOID — single source of truth for motion.
  *
  * Every animation on the site pulls from these tokens so the whole page
  * moves as one system: `expo.out` for entrances, `power3.inOut` for

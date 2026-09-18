@@ -25,7 +25,7 @@ export function EasterEggs() {
   useEffect(() => {
     // console signature
     console.log(
-      "%cDIVYANSH://VOID",
+      "%cAIZEN://VOID",
       "color:#22D3EE;font-size:22px;font-weight:bold;font-family:monospace;letter-spacing:3px;"
     );
     console.log(

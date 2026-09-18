@@ -46,7 +46,7 @@ function getUpstash(): Ratelimit | null {
   upstash = new Ratelimit({
     redis: new Redis({ url, token }),
     limiter: Ratelimit.slidingWindow(MAX_HITS, "60 s"),
-    prefix: "divivoid:contact",
+    prefix: "aizenvoid:contact",
   });
   return upstash;
 }

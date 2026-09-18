@@ -20,31 +20,22 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: "how-i-built-this-portfolio",
-    title: "How I built this portfolio (and the bug that hid every click)",
+    slug: "self-healing-iot-operator",
+    title: "Self-healing an IoT fleet in 1.3 seconds",
     excerpt:
-      "80k WebGL particles, GSAP scroll choreography, and a hydration mismatch that silently made the entire site unclickable — a debugging war story.",
-    date: "2026-07-06",
-    readingTime: "7 min read",
-    tags: ["WebGL", "Next.js", "Performance", "Debugging"],
+      "Dual-path failure detection over MQTT, Kafka event streams, and a Kubernetes operator that recovers dead devices exactly once.",
+    date: "2026-08-20",
+    readingTime: "4 min read",
+    tags: ["Kubernetes", "Java", "Kafka", "Reliability"],
   },
   {
-    slug: "building-multi-agent-ai-systems",
-    title: "Building multi-agent AI systems that don't fall apart",
+    slug: "fuzzing-a-packet-parser",
+    title: "Fuzzing a C++ packet parser before trusting it",
     excerpt:
-      "What actually breaks when you wire LLMs into a backend — contract-driven service boundaries, local-model fallbacks, and how to make agents testable.",
-    date: "2026-06-28",
-    readingTime: "6 min read",
-    tags: ["AI", "LLMs", "CrewAI", "Backend"],
-  },
-  {
-    slug: "fuzzing-for-sqli-xss-at-scale",
-    title: "Fuzzing for SQLi and XSS at scale",
-    excerpt:
-      "How CivicShield crawls a target, extracts endpoints and parameters from JavaScript, and fuzzes them for injection flaws — offensive security, end to end.",
-    date: "2026-06-15",
-    readingTime: "5 min read",
-    tags: ["Security", "Fuzzing", "OWASP", "Python"],
+      "How the DPI engine's parsers survived 85,000+ malformed packets under ASan, UBSan, and TSan — and why the harness came before the features.",
+    date: "2026-07-30",
+    readingTime: "4 min read",
+    tags: ["C++", "Fuzzing", "Security", "Networking"],
   },
 ];
 

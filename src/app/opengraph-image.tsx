@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/content";
 
-export const alt = `${SITE.name} — full-stack developer · security engineer`;
+export const alt = `${SITE.name} — software engineer · devsecops · blockchain`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
               color: "#EAF2F8",
             }}
           >
-            Divyansh Gupta
+            {SITE.name}
           </div>
           <div
             style={{
@@ -53,7 +53,7 @@ export default function OpengraphImage() {
               fontFamily: "monospace",
             }}
           >
-            full-stack developer · security engineer
+            software engineer · devsecops · blockchain
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export default function OpengraphImage() {
               background: "#22D3EE",
             }}
           />
-          STATUS: OPEN TO WORK — DESCEND THROUGH THE VOID
+          STATUS: OPEN TO WORK
         </div>
       </div>
     ),

@@ -12,14 +12,12 @@ import { SITE, SITE_URL } from "@/lib/content";
 
 // Slug → post body. Keep in sync with BLOG_POSTS; each body is a typed
 // TSX component in src/content/blog/.
-import HowIBuiltThisPortfolio from "@/content/blog/how-i-built-this-portfolio";
-import BuildingMultiAgentAiSystems from "@/content/blog/building-multi-agent-ai-systems";
-import FuzzingForSqliXssAtScale from "@/content/blog/fuzzing-for-sqli-xss-at-scale";
+import SelfHealingIotOperator from "@/content/blog/self-healing-iot-operator";
+import FuzzingAPacketParser from "@/content/blog/fuzzing-a-packet-parser";
 
 const BODIES: Record<string, ComponentType> = {
-  "how-i-built-this-portfolio": HowIBuiltThisPortfolio,
-  "building-multi-agent-ai-systems": BuildingMultiAgentAiSystems,
-  "fuzzing-for-sqli-xss-at-scale": FuzzingForSqliXssAtScale,
+  "self-healing-iot-operator": SelfHealingIotOperator,
+  "fuzzing-a-packet-parser": FuzzingAPacketParser,
 };
 
 interface PageProps {

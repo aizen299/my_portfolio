@@ -8,7 +8,7 @@ import { usePreloaded } from "@/lib/use-preloaded";
 import { ScrambleText } from "@/components/fx/scramble-text";
 import { useMediaQuery, REDUCED_MOTION_QUERY } from "@/lib/hooks";
 
-const LINES = ["DIVYANSH", "GUPTA"];
+const LINES = ["ADITYA", "RAINA"];
 
 /**
  * 01 — Surface. The particle crystal now lives in the global
@@ -136,7 +136,7 @@ export function Hero() {
           </a>
           <a
             href="/resume.pdf"
-            download="Divyansh_Gupta_Resume.pdf"
+            download="Aditya_Raina_Resume.pdf"
             className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-signal"
           >
             ↓ Download

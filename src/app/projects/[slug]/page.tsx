@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { Badge } from "@/components/ui/badge";
-import { ViewTransition } from "@/components/fx/view-transition";
 import { ScrollProgress } from "@/components/fx/scroll-progress";
 import { ArchitectureDiagram } from "@/components/sections/architecture-diagram";
 import { PROJECTS } from "@/lib/content";
@@ -55,33 +54,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </p>
         </header>
 
-        <div className="grid gap-16 pb-32 lg:grid-cols-2">
-          {/* Sticky media column — morphs in from the project panel via
-              the shared view-transition name. Real screenshots pending. */}
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <ViewTransition name={`project-media-${project.slug}`}>
-              <div
-                className="relative min-h-[420px] overflow-hidden rounded-lg border"
-                style={!project.image ? {
-                  background: `linear-gradient(160deg, ${project.accent}12, transparent 55%), radial-gradient(ellipse 70% 60% at 50% 40%, ${project.accent}14, transparent 70%)`,
-                } : undefined}
-              >
-                {project.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    className="h-full w-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="flex min-h-[420px] items-center justify-center">
-                    <span className="label-mono">media — pending assets</span>
-                  </div>
-                )}
-              </div>
-            </ViewTransition>
-          </div>
-
+        <div className="max-w-4xl pb-32">
           {/* Scrolling text column */}
           <div className="flex flex-col gap-16">
             <section aria-label="Overview">

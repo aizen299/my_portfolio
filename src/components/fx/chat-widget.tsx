@@ -11,7 +11,7 @@ interface Message {
 const GREETING: Message = {
   role: "assistant",
   content:
-    "Hey — I'm Divyansh. Ask me about my projects, experience, or anything else on your mind.",
+    "Hey — I'm Aditya. Ask me about my projects, experience, or anything else on your mind.",
 };
 
 export function ChatWidget() {
@@ -100,7 +100,7 @@ export function ChatWidget() {
             <div className="flex items-center gap-2">
               <span className="size-2 animate-pulse rounded-full bg-signal" />
               <span className="label-mono text-xs text-ice">
-                DIVYANSH://VOID · live
+                AIZEN://VOID · live
               </span>
             </div>
             <button
@@ -193,7 +193,7 @@ export function ChatWidget() {
       {/* Toggle button — solid so it's impossible to miss */}
       <button
         onClick={() => setOpen((o) => !o)}
-        aria-label={open ? "Close chat" : "Chat with Divyansh"}
+        aria-label={open ? "Close chat" : "Chat with Aditya"}
         className={`flex items-center gap-2 rounded-full px-5 py-3 font-mono text-xs font-semibold uppercase tracking-widest shadow-lg shadow-signal/40 transition-all hover:scale-105 hover:shadow-signal/60 ${
           open
             ? "bg-void border border-signal/40 text-signal"

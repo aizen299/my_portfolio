@@ -1,8 +1,8 @@
-# DIVYANSH://VOID
+# AIZEN://VOID
 
-**Live → [portfolio-divi.vercel.app](https://portfolio-divi.vercel.app)**
+**Live → [aditya-raina.vercel.app](https://aditya-raina.vercel.app)**
 
-Personal portfolio of Divyansh Gupta — full-stack developer, security engineer, and blockchain auditor. Built as a single long-scroll experience with GPU-adaptive WebGL particle systems, GSAP scroll choreography, and a terminal-style AI chat widget.
+Personal portfolio of Aditya Raina — software engineer working across DevSecOps, distributed systems, and cross-chain blockchain protocols. Built as a single long-scroll experience with GPU-adaptive WebGL particle systems, GSAP scroll choreography, and a terminal-style AI chat widget.
 
 ---
 
@@ -13,10 +13,10 @@ Personal portfolio of Divyansh Gupta — full-stack developer, security engineer
 | **WebGL particle field** | 18k–80k particles (GPU-tier adaptive) forming a crystal silhouette that morphs into a bust as you scroll into the About section — driven by a GLSL `uMorph` uniform, not CPU geometry swaps |
 | **Fibonacci beacon** | Contact section's sphere built from a fibonacci-distributed particle cloud with a breathing pulse and slow rotation |
 | **Smooth theme toggle** | Dark ↔ Light with zero geometry rebuild — both colour palettes are precomputed; `uColorMix` cross-fades them in the shader; CSS transitions via a scoped `.theme-transitioning` class window |
-| **SSR theming** | `divi-theme` cookie read server-side in the App Router layout so the correct `html.light` class is rendered before hydration — no flash, no mismatch |
+| **SSR theming** | `aizen-theme` cookie read server-side in the App Router layout so the correct `html.light` class is rendered before hydration — no flash, no mismatch |
 | **Horizontal scroll** | GSAP `ScrollTrigger` pin + scrub drives the Projects section sideways; each panel has a WebGL ripple shader with RGB-shift at scroll velocity |
 | **View transitions** | Shared-element morph between a project panel and its case-study page via the View Transitions API |
-| **AI chat widget** | Terminal-style floating widget powered by Claude (Anthropic SDK) with Upstash rate limiting and a keep-warm cron |
+| **AI chat widget** | Terminal-style floating widget powered by Groq with per-IP rate limiting and a keep-warm cron |
 | **Vault terminal** | Interactive shell in the Security section with real command responses |
 | **Custom cursor** | Fine-pointer only; degrades gracefully on touch |
 | **Easter eggs** | Konami code triggers a full-page glitch animation |
@@ -44,7 +44,7 @@ Personal portfolio of Divyansh Gupta — full-stack developer, security engineer
 - [shadcn/ui](https://ui.shadcn.com/) components
 
 **AI / Backend**
-- [@anthropic-ai/sdk](https://github.com/anthropics/anthropic-sdk-typescript) — Claude for the chat widget
+- [groq-sdk](https://github.com/groq/groq-typescript) — LLM backend for the chat widget
 - [Groq SDK](https://groq.com/) — Llama 3.3 70B fallback
 - [Upstash Redis + Ratelimit](https://upstash.com/) — per-IP rate limiting
 - [Resend](https://resend.com/) — contact form emails
@@ -69,10 +69,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Environment variables
 
 ```env
-# AI chat widget
-ANTHROPIC_API_KEY=
-
-# Groq fallback (optional)
+# AI chat widget (Groq)
 GROQ_API_KEY=
 
 # Rate limiting (Upstash Redis)
@@ -81,9 +78,11 @@ UPSTASH_REDIS_REST_TOKEN=
 
 # Contact form emails (Resend)
 RESEND_API_KEY=
+CONTACT_TO_EMAIL=rainaaditya58@gmail.com
+CONTACT_FROM_EMAIL="AIZEN://VOID <onboarding@resend.dev>"
 
 # Canonical URL for metadata / OG tags
-NEXT_PUBLIC_SITE_URL=https://portfolio-divi.vercel.app
+NEXT_PUBLIC_SITE_URL=https://aditya-raina.vercel.app
 ```
 
 The site runs without any keys — the chat widget falls back gracefully and the contact form shows an error toast. WebGL, scroll animations, and theming are entirely client-side.
@@ -128,7 +127,7 @@ src/
 
 ## Deployment
 
-Deployed on **Vercel**. The only build-time requirement is `NEXT_PUBLIC_SITE_URL`. All other env vars are runtime (API routes).
+Deployed on **Vercel** from the `main` branch of `aizen299/my_portfolio` — every push redeploys. The only build-time requirement is `NEXT_PUBLIC_SITE_URL`; all other env vars are runtime (API routes). `vercel.json` registers a daily cron that keeps `/api/chat` warm.
 
 ```bash
 npm run build   # production build
@@ -143,4 +142,4 @@ npm run start   # production server
 
 ---
 
-*Divyansh Gupta · [github.com/Divyansh2602](https://github.com/Divyansh2602) · [linkedin](https://www.linkedin.com/in/divyansh-gupta-485b04377/) · divyanshg2602@gmail.com*
+*Aditya Raina · [github.com/aizen299](https://github.com/aizen299) · [linkedin](https://www.linkedin.com/in/aditya-raina-ab3a69293) · rainaaditya58@gmail.com*

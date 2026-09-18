@@ -5,17 +5,18 @@ import { Footer } from "@/components/layout/footer";
 import { Badge } from "@/components/ui/badge";
 import { ScrollProgress } from "@/components/fx/scroll-progress";
 import { getSortedPosts, formatPostDate } from "@/lib/blog";
+import { SITE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Logs",
   description:
-    "Engineering write-ups on multi-agent AI systems, WebGL performance, and offensive security — grounded in real projects.",
+    "Engineering write-ups on self-healing infrastructure, DevSecOps, and parser fuzzing — grounded in real projects.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
-    title: "Logs — Divyansh Gupta",
+    title: `Logs — ${SITE.name}`,
     description:
-      "Engineering write-ups on multi-agent AI systems, WebGL performance, and offensive security.",
+      "Engineering write-ups on self-healing infrastructure, DevSecOps, and parser fuzzing.",
     url: "/blog",
   },
 };
@@ -34,8 +35,8 @@ export default function BlogIndexPage() {
             <p className="label-mono mb-6">{"//"} logs — writing</p>
             <h1 className="text-display text-6xl sm:text-7xl">Logs</h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              Engineering write-ups — multi-agent AI, WebGL performance, and
-              offensive security. Each one traces back to something I actually
+              Engineering write-ups — self-healing infra, DevSecOps, and
+              fuzzing. Each one traces back to something I actually
               built.
             </p>
           </header>

@@ -20,18 +20,19 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE.name} — full-stack developer · security engineer`,
+    default: `${SITE.name} — software engineer · devsecops · blockchain`,
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Full-stack developer and security engineer. End-to-end platforms, data pipelines, attack-surface tooling, and Ethereum smart-contract auditing. Descend through the void.",
+    "Software engineer building DevSecOps platforms, distributed systems, and cross-chain blockchain protocols in Go, C++, Python, TypeScript, and Solidity.",
   keywords: [
-    "Divyansh Gupta",
-    "software architect",
-    "security engineer",
-    "full-stack developer",
-    "cybersecurity",
-    "cryptography",
+    "Aditya Raina",
+    "aizen299",
+    "software engineer",
+    "DevSecOps",
+    "DevOps",
+    "blockchain engineer",
+    "distributed systems",
     "Next.js",
     "WebGL",
     "portfolio",
@@ -42,17 +43,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.alias,
-    title: `${SITE.name} — architect · security engineer · builder`,
+    title: `${SITE.name} — software engineer · devsecops · blockchain`,
     description:
-      "Encrypted AI systems, semantic pipelines, offensive security. Descend through the void.",
+      "DevSecOps platforms, self-healing infrastructure, and cross-chain protocols.",
     url: SITE_URL,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — architect · security engineer · builder`,
+    title: `${SITE.name} — software engineer · devsecops · blockchain`,
     description:
-      "Encrypted AI systems, semantic pipelines, offensive security. Descend through the void.",
+      "DevSecOps platforms, self-healing infrastructure, and cross-chain protocols.",
   },
   robots: {
     index: true,
@@ -68,14 +69,14 @@ const personJsonLd = {
   alternateName: SITE.alias,
   url: SITE_URL,
   email: `mailto:${SITE.email}`,
-  jobTitle: "Full-Stack Developer & Security Engineer",
+  jobTitle: "Software Engineer",
   knowsAbout: [
-    "Full-Stack Development",
-    "Web Application Security",
-    "OWASP Top 10",
-    "Threat Modeling",
-    "Blockchain & Smart-Contract Auditing",
-    "Data Pipeline Engineering",
+    "DevSecOps",
+    "Distributed Systems",
+    "Kubernetes",
+    "Smart-Contract Security",
+    "Cross-Chain Protocols",
+    "Network Security",
   ],
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -92,7 +93,7 @@ export default async function RootLayout({
   // Read theme cookie so the server renders the correct class — eliminates
   // the SSR/client className mismatch and the dev-mode hydration error.
   const jar = await cookies();
-  const theme = jar.get("divi-theme")?.value === "light" ? "light" : "";
+  const theme = jar.get("aizen-theme")?.value === "light" ? "light" : "";
 
   return (
     <html

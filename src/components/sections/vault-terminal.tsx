@@ -12,7 +12,7 @@ import {
 type Line = { kind: "in" | "out" | "sys"; text: string };
 
 const BANNER = [
-  "DIVYANSH://VOID — vault shell v1.0",
+  `${SITE.alias} — vault shell v1.0`,
   "type 'help' for commands · 'sudo hire me' for the good stuff",
 ];
 
@@ -21,7 +21,7 @@ const HELP = [
   "  help        this list",
   "  whoami      operator identity",
   "  projects    declassified work",
-  "  ctf         competition history",
+  "  ctf         hackathons & community",
   "  skills      capability matrix",
   "  certs       certification roadmap",
   "  contact     how to reach me",
@@ -41,7 +41,7 @@ function run(raw: string): Line[] | "clear" {
     case "whoami":
       return [
         { kind: "out", text: `${SITE.name} — ${SITE.roles.join(" · ")}` },
-        { kind: "out", text: "VIT CSE '27 · ex-IBM blockchain · security-first" },
+        { kind: "out", text: "VIT M.Tech SE '28 · ex-IBM DevOps · security-first" },
       ];
     case "projects":
       return [
@@ -55,8 +55,8 @@ function run(raw: string): Line[] | "clear" {
     case "ctf":
     case "hackathon":
       return [
-        { kind: "out", text: "Hack Energy 2.0 — Finalist (CivicShield)" },
-        { kind: "out", text: "focus: appsec · web crawling · smart-contract audit" },
+        { kind: "out", text: "Chairman — VIT Blockchain Community (Web3 hackathons & workshops)" },
+        { kind: "out", text: "focus: devsecops · fuzzing · smart-contract security" },
       ];
     case "skills":
       return SKILL_CARDS.map((c) => ({

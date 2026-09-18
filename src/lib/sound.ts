@@ -5,7 +5,7 @@
  * to satisfy browser autoplay policies.
  */
 
-const KEY = "divi-sound";
+const KEY = "aizen-sound";
 let enabled = false;
 let ctx: AudioContext | null = null;
 

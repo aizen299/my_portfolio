@@ -65,21 +65,10 @@ function Panel({
       {/* Media layer — shared-element morph target into the case study */}
       <ViewTransition name={`project-media-${project.slug}`}>
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          {project.image && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 h-full w-full object-cover object-top opacity-35"
-            />
-          )}
           <div
             className="absolute inset-0"
             style={{
-              background: project.image
-                ? `linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.18) 100%), linear-gradient(160deg, ${project.accent}22, transparent 60%)`
-                : `linear-gradient(160deg, ${project.accent}12, transparent 55%), radial-gradient(ellipse 70% 60% at 60% 28%, ${project.accent}10, transparent 70%)`,
+              background: `linear-gradient(160deg, ${project.accent}12, transparent 55%), radial-gradient(ellipse 70% 60% at 60% 28%, ${project.accent}10, transparent 70%)`,
             }}
           />
           {webgl && (

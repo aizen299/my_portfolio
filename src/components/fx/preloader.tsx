@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { GSAP_EASE } from "@/lib/motion";
 
-const NAME = "DIVYANSH GUPTA";
+const NAME = "ADITYA RAINA";
 const CIPHER = "!<>-_\\/[]{}—=+*^?#█▓▒░";
 
 /* Matching jagged edge for the two halves — the "ice crack". */
@@ -21,7 +21,7 @@ const BOTTOM_CLIP = `polygon(100% 100%, 0% 100%, ${[...CRACK.split(", ")]
  * ice-crack reveal. Scroll is locked while active. Reduced-motion users
  * get a quick fade instead.
  */
-const SESSION_KEY = "divi:loaded";
+const SESSION_KEY = "aizen:loaded";
 
 export function Preloader() {
   // Must start false to match the server-rendered overlay — reading
@@ -39,8 +39,8 @@ export function Preloader() {
   useEffect(() => {
     // signal the hero to play its intro once the overlay is gone
     const announce = () => {
-      (window as Window & { __diviPreloaded?: boolean }).__diviPreloaded = true;
-      window.dispatchEvent(new Event("divi:preloaded"));
+      (window as Window & { __aizenPreloaded?: boolean }).__aizenPreloaded = true;
+      window.dispatchEvent(new Event("aizen:preloaded"));
     };
 
     // Already ran this session — unblock the hero and drop the overlay

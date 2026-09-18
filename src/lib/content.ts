@@ -1,20 +1,19 @@
 /**
- * Site content — sourced from Divi's resume (overall.pdf), LinkedIn, and
- * GitHub. Project repo/live URLs and a couple of stats are still pending
- * confirmation (see the questions Divi was asked).
+ * Site content — sourced from Aditya's resume, LinkedIn, and GitHub
+ * (github.com/aizen299).
  */
 
 export const SITE = {
-  name: "Divyansh Gupta",
-  alias: "DIVYANSH://VOID",
-  email: "divyanshg2602@gmail.com",
-  roles: ["security engineer", "blockchain auditor", "ai backend builder"],
+  name: "Aditya Raina",
+  alias: "AIZEN://VOID",
+  email: "rainaaditya58@gmail.com",
+  roles: ["software engineer", "devsecops builder", "blockchain engineer"],
   status: "open to work",
 } as const;
 
 /** Canonical site origin (no trailing slash). Override per-deploy. */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-divi.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aditya-raina.vercel.app"
 ).replace(/\/$/, "");
 
 export const SECTIONS = [
@@ -31,29 +30,33 @@ export const SECTIONS = [
 export type SectionId = (typeof SECTIONS)[number]["id"];
 
 export const STATS = [
-  { value: 3, suffix: "+", label: "years building" },
-  { value: 3, suffix: "", label: "dev internships" },
-  { value: 5, suffix: "", label: "certifications" },
-  { value: 150, suffix: "+", label: "students mentored" },
+  { value: 2, suffix: "", label: "internships" },
+  { value: 5, suffix: "", label: "systems" },
+  { value: 900, suffix: "+", label: "tests" },
+  { value: 3, suffix: "", label: "certs" },
 ] as const;
 
 export const STACK_MARQUEE = [
+  "Go",
+  "C/C++",
   "Python",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "REST APIs",
-  "SQL",
-  "MySQL",
-  "ElasticSearch",
-  "Git",
-  "GitHub Actions",
-  "Linux",
-  "Web Crawling",
-  "OWASP Top 10",
-  "Threat Modeling",
+  "Java",
+  "Rust",
+  "TypeScript",
   "Solidity",
-  "Ethereum",
+  "Next.js",
+  "FastAPI",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "Ansible",
+  "GitHub Actions",
+  "Kafka",
+  "Prometheus",
+  "Grafana",
+  "Foundry",
+  "Anchor",
+  "Noir",
 ] as const;
 
 export interface Project {
@@ -66,179 +69,130 @@ export interface Project {
   metrics: { value: string; label: string }[];
   links: { live?: string; repo?: string };
   accent: string;
-  /** Optional screenshot served from /public/projects/. Falls back to accent gradient. */
-  image?: string;
   /** Ordered architecture flow — drawn in on the case-study page. */
   architecture: string[];
 }
 
 export const PROJECTS: Project[] = [
   {
-    slug: "civicshield",
+    slug: "secureops",
     index: "01",
-    title: "CivicShield",
-    tagline: "AI threat-intelligence platform & vulnerability scanner",
+    title: "SecureOps",
+    tagline: "Contextual DevSecOps security platform",
     description:
-      "AI-powered cybersecurity platform with a real-time global threat dashboard. Visualises active attack paths on a 3D globe, auto-classifies severity (Low→Critical), and streams live threat feeds for DDoS, ransomware, and phishing events. Full vulnerability scanner, attack-surface mapper, phishing detector, and API security analyser — backed by CivicShield AI for scan-derived intelligence insights. Hack Energy 2.0 Finalist.",
-    stack: [
-      "Python",
-      "JavaScript",
-      "AI/ML",
-      "REST APIs",
-      "Web Crawling",
-      "3D Visualisation",
-    ],
+      "Go/Chi platform that orchestrates six scanners — Gitleaks, Syft, Grype, Semgrep, Trivy, and OWASP ZAP — behind one adapter interface. Output is normalised into a canonical finding model keyed by a collision-resistant SHA-256 fingerprint, correlated across security domains into contextual issues, and scored by a deterministic 5-factor risk engine. Shipped four ways from one codebase: REST API, Next.js dashboard, a CI client with a three-value exit contract, and a GitHub Action — hardened with Argon2id accounts, project-scoped RBAC, transactional append-only audit logging, and a Helm chart that refuses any image not pinned by digest.",
+    stack: ["Go", "Chi", "Next.js", "PostgreSQL", "Helm", "GitHub Actions"],
     metrics: [
-      { value: "Finalist", label: "Hack Energy 2.0" },
-      { value: "real-time", label: "global threat feed" },
-      { value: "AI-powered", label: "scan intelligence" },
+      { value: "6", label: "scanners unified" },
+      { value: "5-factor", label: "risk engine" },
+      { value: "4", label: "delivery surfaces" },
     ],
-    links: {
-      repo: "https://github.com/Divyansh2602/CivicShield_full",
-      live: "https://civicshieldx.vercel.app/",
-    },
+    links: { repo: "https://github.com/aizen299/secure-dev" },
     accent: "#34D399",
-    image: "/projects/civicshield.png",
     architecture: [
-      "Real-time threat feed — DDoS/ransomware/phishing events",
-      "3D globe — curved cross-border attack-path arcs",
-      "Vulnerability scanner — attack-surface mapper",
-      "Phishing detection + API security analysis",
-      "CivicShield AI — scan-derived intelligence",
+      "Scanner adapters — Gitleaks, Syft, Grype, Semgrep, Trivy, ZAP",
+      "Canonical finding model — SHA-256 fingerprint dedup",
+      "Cross-domain correlation — findings → contextual issues",
+      "Deterministic 5-factor risk scoring",
+      "Delivery — REST API, dashboard, CI client, GitHub Action",
     ],
   },
   {
-    slug: "ciphermind",
+    slug: "chainaudit",
     index: "02",
-    title: "CipherMind",
-    tagline: "End-to-end encrypted AI chat",
-    description:
-      "Encrypted AI chat where every message is AES-256-GCM ciphered before leaving the browser — zero plaintext in transit. Session keys are derived via PBKDF2 and integrity is guaranteed by HMAC-SHA512. The Groq Llama 3.3 70B backend runs server-side with the API key fully protected. Tracks encrypted/decrypted message counts, token usage, and HMAC checks per session.",
-    stack: [
-      "React",
-      "TypeScript",
-      "AES-256-GCM",
-      "PBKDF2",
-      "HMAC-SHA512",
-      "Groq API",
-    ],
-    metrics: [
-      { value: "AES-256", label: "GCM encryption" },
-      { value: "zero", label: "plaintext in transit" },
-      { value: "Llama 3.3 70B", label: "Groq backend" },
-    ],
-    links: {
-      repo: "https://github.com/Divyansh2602/ciphermind",
-      live: "https://ciphermind-frontend.vercel.app/",
-    },
-    accent: "#A78BFA",
-    image: "/projects/ciphermind.png",
-    architecture: [
-      "PBKDF2 — session key derivation",
-      "AES-256-GCM — message encryption in-browser",
-      "HMAC-SHA512 — integrity verification",
-      "Groq API — Llama 3.3 70B server-side",
-      "Session store — encrypted history + export",
-    ],
-  },
-  {
-    slug: "smart-contract-auditor",
-    index: "03",
     title: "ChainAudit",
-    tagline: "Automated Solidity smart-contract security auditor",
+    tagline: "Multi-chain smart-contract security platform",
     description:
-      "Static analysis engine that parses Solidity smart contracts, extracts the AST, and runs a suite of vulnerability detectors — reentrancy, integer overflow/underflow, unchecked external calls, improper access control, and gas-griefing vectors. Generates structured audit reports with per-finding severity ratings (Critical → Low) and remediation guidance. Built on the blockchain security knowledge from the IBM auditing engagement.",
-    stack: [
-      "Solidity",
-      "JavaScript",
-      "AST Analysis",
-      "Static Analysis",
-      "Web3",
-      "Ethereum",
-    ],
+      "Smart-contract security scanner that maps 51 Slither detectors to 30 CVSS-scored rules and adds 23 Solana/Rust pattern rules, with automatic chain detection across 7 EVM networks and Solana. A Random Forest model ranks findings by exploitability (88% accuracy). Shipped three ways from one codebase — a PyPI CLI, a GitHub Marketplace Action, and a Next.js/FastAPI web app — hardened with ES256/JWKS token verification, Postgres row-level security, and a blocking CI gate that fails builds on CRITICAL findings.",
+    stack: ["Python", "Slither", "FastAPI", "Next.js", "scikit-learn", "PostgreSQL"],
     metrics: [
-      { value: "6+", label: "vulnerability classes" },
-      { value: "Critical→Low", label: "severity ratings" },
-      { value: "automated", label: "audit reports" },
+      { value: "53", label: "detection rules" },
+      { value: "8", label: "chains supported" },
+      { value: "88%", label: "exploitability model" },
     ],
     links: {
-      repo: "https://github.com/Divyansh2602/smart-contract-auditor",
-      live: "https://chainaudit.vercel.app/",
+      repo: "https://github.com/aizen299/smart-contract-auditor",
+      live: "https://chainaudit.vercel.app",
     },
     accent: "#F59E0B",
-    image: "/projects/smart-contract-auditor.png",
     architecture: [
-      "Solidity parser — AST extraction",
-      "Vulnerability detectors — reentrancy, overflow, access control",
-      "Unchecked-call + gas-griefing scanners",
-      "Severity classifier — Critical / High / Medium / Low",
-      "Audit report — structured findings + remediation",
+      "Chain detection — 7 EVM networks + Solana",
+      "Slither detectors → 30 CVSS-scored rules",
+      "Solana/Rust pattern engine — 23 rules",
+      "Random Forest — exploitability ranking",
+      "Delivery — PyPI CLI, Marketplace Action, web app",
     ],
   },
   {
-    slug: "accident-prediction-model",
-    index: "04",
-    title: "Accident Risk Model",
-    tagline: "ML pipeline predicting 2026 road-accident severity & blackspots",
+    slug: "self-healing-iot",
+    index: "03",
+    title: "Self-Healing IoT Fleet",
+    tagline: "Edge fleet with Kubernetes-operator auto-recovery",
     description:
-      "End-to-end machine learning pipeline that ingests road-accident records and predicts 2026 accident occurrences and geographic blackspots — high-risk locations where collisions are statistically concentrated. Exploratory data analysis surfaces hidden patterns; feature engineering extracts time-of-day, weather, road-condition, and vehicle-type signals. The trained classifier outputs risk-tier scores with per-feature importance breakdowns and pinpoints accident-prone zones for targeted intervention.",
-    stack: [
-      "Python",
-      "scikit-learn",
-      "pandas",
-      "EDA",
-      "Feature Engineering",
-    ],
+      "Java 21 self-healing edge/IoT platform across 5 Maven modules and 279 tests. Fifty simulated MQTT devices are monitored by a gateway with dual-path failure detection — broker Last Will plus heartbeat timeout — streaming to Kafka and persisting to a time-series store. A 300-line Kubernetes operator replaces dead pods idempotently using an API-server-enforced SHA-256 recovery id, measured at 1332 ms median MTTR across 20 samples with a 20/20 success rate.",
+    stack: ["Java 21", "MQTT", "Kafka", "Kubernetes", "Prometheus", "Grafana"],
     metrics: [
-      { value: "ML", label: "severity classifier" },
-      { value: "multi-factor", label: "feature engineering" },
-      { value: "interpretable", label: "risk-tier output" },
+      { value: "1332 ms", label: "median MTTR" },
+      { value: "20/20", label: "recovery success" },
+      { value: "279", label: "tests" },
+    ],
+    links: { repo: "https://github.com/aizen299/self-healing-iot" },
+    accent: "#A78BFA",
+    architecture: [
+      "Device simulator — 50 MQTT edge devices",
+      "Gateway — Last Will + heartbeat failure detection",
+      "Kafka — telemetry and failure event streams",
+      "Time-series store — fleet history",
+      "Kubernetes operator — idempotent pod recovery",
+    ],
+  },
+  {
+    slug: "deep-packet-inspection",
+    index: "04",
+    title: "Deep Packet Inspection",
+    tagline: "Multi-threaded C++ DPI engine with ML anomaly detection",
+    description:
+      "Multi-threaded C++17 deep packet inspection engine using 5-tuple hash routing for flow affinity. Parses Ethernet/IP/TCP/UDP and extracts TLS SNI, HTTP Host, and DNS metadata to classify traffic by application; the parsers are hardened against untrusted input with a fuzzing harness validating 85,000+ malformed packets under ASan, UBSan, and TSan. A FastAPI Isolation Forest service provides percentile-calibrated risk scoring, served via a Node.js/Express control plane to a Next.js WebSocket dashboard, containerised with Docker Compose and gated by a five-stage CI pipeline.",
+    stack: ["C++17", "FastAPI", "scikit-learn", "Node.js", "Next.js", "Docker"],
+    metrics: [
+      { value: "85k+", label: "fuzzed packets" },
+      { value: "3", label: "sanitizers clean" },
+      { value: "5-stage", label: "CI pipeline" },
     ],
     links: {
-      repo: "https://github.com/Divyansh2602/2026_accident_model",
+      repo: "https://github.com/aizen299/Deep_Packet_Inspection_V2",
+      live: "https://dpi-dashboard-9gk9.onrender.com/",
     },
     accent: "#FB923C",
-    image: "/projects/accident-model.png",
     architecture: [
-      "Ingest — raw accident records dataset",
-      "EDA — pattern & correlation analysis",
-      "Feature engineering — time, weather, road, vehicle",
-      "Classifier training — severity prediction model",
-      "Output — risk-tier scores + feature importance",
+      "PCAP ingest — 5-tuple hash routing to worker threads",
+      "Protocol parsers — Ethernet / IP / TCP / UDP",
+      "Metadata extraction — TLS SNI, HTTP Host, DNS",
+      "Isolation Forest — calibrated anomaly risk scores",
+      "Express control plane → Next.js WebSocket dashboard",
     ],
   },
   {
-    slug: "securescout",
+    slug: "aegis-protocol",
     index: "05",
-    title: "SecureScout",
-    tagline: "Enterprise static security scanner for banking systems",
+    title: "Aegis Protocol",
+    tagline: "Modular cross-chain DeFi & Web3 infrastructure",
     description:
-      "Production-grade security platform built for PSB Hackathon 2026 (UCO Bank × IIT Kharagpur). Detects vulnerable dependencies, hardcoded secrets, weak cryptography, injection flaws, and insecure configurations in Python projects. Ships a full Next.js dashboard with 5-tier RBAC, immutable audit logging, and a CI/CD gate that exits non-zero on Critical findings.",
-    stack: [
-      "Python",
-      "TypeScript",
-      "Next.js",
-      "Express",
-      "PostgreSQL",
-      "Redis",
-    ],
+      "Modular DeFi protocol spanning Arbitrum and Solana — vault, oracle network, DAO governance, and zk privacy — in Solidity, Rust/Anchor, Go, and Noir. Cross-chain governance runs over Wormhole: proposals passed on Arbitrum execute on Solana behind a timelock, a program allowlist, and caps on measured treasury outflow. UUPS-upgradeable contracts are checked for storage-layout safety, a chain-agnostic Go indexer is idempotent and reorg-safe, and zk proofs run in-browser. Covered by 900+ automated tests, including 45 end-to-end tests against real local chains, mutation testing, and Slither, enforced through per-layer CI.",
+    stack: ["Solidity", "Rust/Anchor", "Go", "Noir", "Wormhole", "Foundry"],
     metrics: [
-      { value: "PSB 2026", label: "UCO Bank × IIT KGP" },
-      { value: "5", label: "detector types" },
-      { value: "5-tier", label: "RBAC system" },
+      { value: "900+", label: "automated tests" },
+      { value: "2", label: "chains bridged" },
+      { value: "45", label: "e2e tests" },
     ],
-    links: {
-      repo: "https://github.com/Divyansh2602/securescout-",
-      live: "https://securescout-web.vercel.app/",
-    },
+    links: { repo: "https://github.com/aizen299/aegis-protocol" },
     accent: "#EF4444",
-    image: "/projects/securescout.png",
     architecture: [
-      "Python engine — CVE, secret, crypto, injection, config detectors",
-      "Express REST API — JWT auth, Zod validation, rate limiting",
-      "5-tier RBAC — Viewer → Super Admin per-route guards",
-      "Next.js dashboard — scan management, findings, audit trail",
-      "CI/CD gate — --fail-on-critical exit code for pipeline blocking",
+      "Vault — UUPS-upgradeable, storage-layout checked",
+      "Oracle network — decentralized price feeds",
+      "DAO governance — Arbitrum proposals via Wormhole",
+      "Solana execution — timelock, allowlist, outflow caps",
+      "Go indexer — idempotent, reorg-safe; in-browser zk proofs",
     ],
   },
 ];
@@ -252,39 +206,29 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
-    role: "Backend Engineer",
-    org: "XtraGrad",
-    period: "1 Jun – 30 Jun 2026",
-    points: [
-      "Building the backend for an AI-powered HR platform — designing APIs, data models, and AI integration layers for automated recruitment and candidate workflows.",
-      "Architecting scalable Python services and integrating LLM-driven features to automate HR decision pipelines end-to-end.",
-    ],
-  },
-  {
-    role: "Operations & Management Head",
-    org: "VIT Blockchain Community Club",
-    period: "2024 – Present",
-    points: [
-      "Lead general operations and management for the college blockchain community — coordinating events, teams, and technical initiatives across the chapter.",
-      "Mentor 150+ students in software engineering, security, and decentralized systems, building a campus pipeline of blockchain and security talent.",
-    ],
-  },
-  {
-    role: "Blockchain Developer",
+    role: "DevOps Intern",
     org: "IBM",
-    period: "May 2025 – Jun 2025",
+    period: "May 2026 – Jul 2026",
     points: [
-      "Audited Ethereum smart contracts for reentrancy, improper access control, and gas-misuse vulnerabilities.",
-      "Applied secure coding and input validation to harden contract logic; ran iterative testing cycles to eliminate logic flaws pre-deployment.",
+      "Built and maintained CI/CD pipelines using Jenkins, GitHub Actions, and containerised services with Docker/Kubernetes to automate and streamline deployment workflows.",
+      "Provisioned cloud infrastructure with Terraform and Ansible, and configured Grafana and Nagios dashboards for monitoring system health and pipeline performance.",
     ],
   },
   {
-    role: "Frontend Developer",
-    org: "1Stop.ai",
-    period: "Jan 2024 – Mar 2024",
+    role: "Chairman",
+    org: "VIT Blockchain Community",
+    period: "Leadership",
     points: [
-      "Built and optimised responsive UIs with HTML, CSS, and JavaScript; restructured frontend architecture to cut load times and improve cross-device consistency.",
-      "Enforced strict input validation and secure JavaScript patterns, reducing client-side attack surface and improving reliability.",
+      "Organised Web3 workshops, hackathons, and smart-contract development programs across the Ethereum and Solana ecosystems.",
+    ],
+  },
+  {
+    role: "AI/ML Intern",
+    org: "Coratia Technologies",
+    period: "Dec 2023 – Feb 2024",
+    points: [
+      "Built an NLP-based sentiment analysis system in Python, classifying user sentiment across large-scale text datasets using supervised machine-learning models.",
+      "Engineered preprocessing pipelines (tokenisation, vectorisation) and tuned model evaluation metrics, improving classification accuracy.",
     ],
   },
 ];
@@ -292,61 +236,62 @@ export const EXPERIENCE: Experience[] = [
 export const SKILL_CARDS = [
   {
     id: "fullstack",
-    title: "Full-Stack",
+    title: "Backend & Web",
     blurb:
-      "End-to-end platforms with responsive, validated UIs and clean REST APIs. HTML/CSS/JavaScript on the front, modular Python services behind — architected for load times and cross-device consistency.",
-    items: ["JavaScript", "Python", "REST APIs", "Responsive UI"],
+      "Production services in Go, Python, and TypeScript — REST APIs, Next.js dashboards, and one codebase shipped as API, CLI, CI client, and GitHub Action.",
+    items: ["Go", "Next.js", "FastAPI", "Node.js"],
     featured: true,
   },
   {
     id: "security",
     title: "Security",
     blurb:
-      "OWASP Top 10 and threat modeling by default. Smart-contract auditing (reentrancy, access control, gas misuse), parameter fuzzing for SQLi/XSS, and strict input validation to shrink the attack surface.",
-    items: ["OWASP Top 10", "Threat modeling", "Smart-contract audit", "Fuzzing"],
+      "DevSecOps pipelines that correlate scanner output into real risk, smart-contract auditing, and parsers fuzzed against hostile input under sanitizers.",
+    items: ["DevSecOps", "Smart-contract security", "Fuzzing", "Network security"],
     featured: false,
     terminal: true,
   },
   {
     id: "data",
-    title: "Backend & Data",
+    title: "Cloud & DevOps",
     blurb:
-      "Modular Python backends, distributed web crawlers, and data pipelines with per-stage validation and automated reporting — indexed in ElasticSearch for real-time querying.",
-    items: ["Data pipelines", "Web crawling", "ElasticSearch", "SQL / MySQL"],
+      "CI/CD with Jenkins, GitHub Actions, and Argo CD; infrastructure as code with Terraform and Ansible; Kubernetes operators and Prometheus/Grafana observability.",
+    items: ["Kubernetes", "Terraform", "Argo CD", "Prometheus"],
     featured: false,
   },
   {
     id: "blockchain",
     title: "Blockchain",
     blurb:
-      "Ethereum smart-contract development and security auditing at IBM — secure coding, iterative testing, and logic-flaw elimination before deployment.",
-    items: ["Ethereum", "Solidity", "Contract auditing", "Secure coding"],
+      "Cross-chain protocols on Ethereum and Solana — ERC-20/721, Anchor programs, Wormhole governance, Noir zk circuits, tested with Foundry and Slither.",
+    items: ["Solidity", "Anchor", "Wormhole", "Noir"],
     featured: false,
   },
 ] as const;
 
 /** Beyond-the-code distinctions — surfaced as badges in the Profile section. */
 export const DISTINCTIONS = [
-  { label: "NPTEL Gold Medal", detail: "100 / 100 — Wildlife & Ecology" },
-  { label: "State-Level Champion", detail: "Table Tennis" },
+  { label: "Chairman", detail: "VIT Blockchain Community" },
+  { label: "Published tooling", detail: "ChainAudit on PyPI & GitHub Marketplace" },
 ] as const;
 
 export const VAULT_PHILOSOPHY =
-  "Security is not a feature you bolt on — it is the substrate everything else runs on. Every system I ship assumes hostile input, least privilege, and an audit trail.";
+  "Security is not a stage at the end of the pipeline — it is the pipeline. Every system I ship assumes hostile input, pins what it runs, and leaves an audit trail.";
 
 export const CERT_ROADMAP = [
-  { year: "2024", label: "Frontend Developer — 1Stop.ai", done: true },
-  { year: "2025", label: "Blockchain Developer — IBM", done: true },
-  { year: "2026", label: "Google Cybersecurity Professional — Coursera", done: true },
-  { year: "2026", label: "Hack Energy 2.0 Finalist — CivicShield", done: true },
-  { year: "2027", label: "B.Tech CSE — VIT (expected)", done: false },
+  { year: "2023", label: "AI/ML Intern — Coratia Technologies", done: true },
+  { year: "cert", label: "IBM Full Stack Software Developer — Coursera", done: true },
+  { year: "cert", label: "100xDevs Cohort — Web, Blockchain, DevOps", done: true },
+  { year: "cert", label: "IBM DevOps, Agile & Design Thinking", done: true },
+  { year: "2026", label: "DevOps Intern — IBM", done: true },
+  { year: "2028", label: "M.Tech (Integrated) Software Engineering — VIT (expected)", done: false },
 ] as const;
 
 export const SOCIALS = [
-  { label: "github", href: "https://github.com/Divyansh2602" },
+  { label: "github", href: "https://github.com/aizen299" },
   {
     label: "linkedin",
-    href: "https://www.linkedin.com/in/divyansh-gupta-485b04377/",
+    href: "https://www.linkedin.com/in/aditya-raina-ab3a69293",
   },
   { label: "email", href: `mailto:${SITE.email}` },
 ] as const;

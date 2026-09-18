@@ -5,13 +5,13 @@ import { useEffect, useRef } from "react";
 const LINES = [
   "STATUS: ONLINE",
   "LOC: VIT // 12.97°N",
-  "ROLE: SEC ENGINEER",
-  "STACK: PY / TS / SOL",
-  "CLEARANCE: OWASP",
+  "ROLE: SWE / DEVSECOPS",
+  "STACK: GO / C++ / SOL",
+  "CLEARANCE: K8S",
   "UPTIME: 24/7",
   "MODE: SHIP",
   "SIG: ENCRYPTED",
-  "BUILD: 2027",
+  "BUILD: 2028",
   "VOID: ACTIVE",
 ];
 

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Live local time in IST (UTC+5:30) — Divi's timezone — ticking each
+ * Live local time in IST (UTC+5:30) — Aditya's timezone — ticking each
  * second. Renders a stable placeholder until mounted to avoid hydration
  * mismatch.
  */
