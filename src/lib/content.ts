@@ -11,9 +11,15 @@ export const SITE = {
   status: "open to work",
 } as const;
 
-/** Canonical site origin (no trailing slash). Override per-deploy. */
+/**
+ * Canonical site origin (no trailing slash). An explicit NEXT_PUBLIC_SITE_URL
+ * wins; otherwise use the free *.vercel.app production domain Vercel injects.
+ */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aditya-raina.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000")
 ).replace(/\/$/, "");
 
 export const SECTIONS = [

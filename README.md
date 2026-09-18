@@ -1,7 +1,5 @@
 # AIZEN://VOID
 
-**Live → [aditya-raina.vercel.app](https://aditya-raina.vercel.app)**
-
 Personal portfolio of Aditya Raina — software engineer working across DevSecOps, distributed systems, and cross-chain blockchain protocols. Built as a single long-scroll experience with GPU-adaptive WebGL particle systems, GSAP scroll choreography, and a terminal-style AI chat widget.
 
 ---
@@ -81,8 +79,9 @@ RESEND_API_KEY=
 CONTACT_TO_EMAIL=rainaaditya58@gmail.com
 CONTACT_FROM_EMAIL="AIZEN://VOID <onboarding@resend.dev>"
 
-# Canonical URL for metadata / OG tags
-NEXT_PUBLIC_SITE_URL=https://aditya-raina.vercel.app
+# Canonical URL for metadata / OG tags (optional — on Vercel it defaults
+# to the project's *.vercel.app production domain)
+NEXT_PUBLIC_SITE_URL=
 ```
 
 The site runs without any keys — the chat widget falls back gracefully and the contact form shows an error toast. WebGL, scroll animations, and theming are entirely client-side.
@@ -127,7 +126,7 @@ src/
 
 ## Deployment
 
-Deployed on **Vercel** from the `main` branch of `aizen299/my_portfolio` — every push redeploys. The only build-time requirement is `NEXT_PUBLIC_SITE_URL`; all other env vars are runtime (API routes). `vercel.json` registers a daily cron that keeps `/api/chat` warm.
+Deployed on **Vercel** from the `main` branch of `aizen299/my_portfolio` — every push redeploys. `NEXT_PUBLIC_SITE_URL` is optional (it falls back to `VERCEL_PROJECT_PRODUCTION_URL`); all other env vars are runtime (API routes). `vercel.json` registers a daily cron that keeps `/api/chat` warm.
 
 ```bash
 npm run build   # production build
