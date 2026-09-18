@@ -19,7 +19,7 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "https://my-portfolio-tau-inky-70.vercel.app")
+    : "https://aditya-raina.vercel.app")
 ).replace(/\/$/, "");
 
 export const SECTIONS = [
